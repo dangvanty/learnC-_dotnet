@@ -1,0 +1,31 @@
+--> cho sqlsever::::
+dotnet add package System.Data.SqlClient
+dotnet add package Microsoft.EntityFrameworkCore
+dotnet add package Microsoft.EntityFrameworkCore.SqlServer
+dotnet add package Microsoft.EntityFrameworkCore.Design
+dotnet add package Microsoft.Extensions.DependencyInjection
+dotnet add package Microsoft.Extensions.Logging
+dotnet add package Microsoft.Extensions.Logging.Console
+
+--> cho mysql:::::
+dotnet add package MySql.Data
+dotnet add package MySql.EntityFrameworkCore
+dotnet add package Microsoft.EntityFrameworkCore
+dotnet add package Microsoft.EntityFrameworkCore.Design   // nay ko biet can ko --> sql server thi can
+dotnet add package Microsoft.Extensions.Configuration.Json
+dotnet add package Microsoft.Extensions.Options.ConfigurationExtensions
+dotnet add package Microsoft.Extensions.DependencyInjection  // package dung de logg
+dotnet add package Microsoft.Extensions.Logging               // package dung de logg
+dotnet add package Microsoft.Extensions.Logging.Console       // package dung de logg
+dotnet add package Microsoft.EntityFrameworkCore.Proxies // dung de lazy load
+--> 
+tạo tự động: --> kỹ thuat scaffold: 
+dotnet ef dbcontext scaffold "server=localhost;user id=vtca;password=vtcacademy;port=3306;database=OrderDB;" MySql.EntityFrameworkCore -o Model
+ví dụ: 
+Trong các tham số trên thì:
+
+-o Models thư mục lưu các entity được sinh ra
+-f cho phép ghi đè file
+-d ưu tiên sử dụng kỹ thuật Data Annotation nếu có thể - nếu không thể thì dùng FLuent API
+Cuối là chuỗi kết nối và thư viện sử dụng
+dotnet ef dbcontext scaffold "server=127.0.0.1;database=learncsharp;user id=root;password=MYSQL_ROOT_PASSWORD;port=3306" MySql.EntityFrameworkCore -o Model -c "OrderDBContext"

@@ -1,0 +1,6 @@
+{
+  "csdl":{
+    "ketnoi1":"server=127.0.0.1;database=learnefcsharp;user id=root;password=MYSQL_ROOT_PASSWORD;port=3306"
+  },
+  "ketnoi2":"server=127.0.0.1;database=WebDBMigration;user id=root;password=MYSQL_ROOT_PASSWORD;port=3306"
+}
