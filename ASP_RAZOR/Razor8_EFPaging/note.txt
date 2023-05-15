@@ -1,0 +1,18 @@
+Để làm việc với EF, hãy thêm các công cụ vào dotnet cũng như tích hợp các Package cần thiết, thực hiện các lệnh sau:
+dotnet tool install --global dotnet-ef
+dotnet tool install --global dotnet-aspnet-codegenerator
+dotnet add package Microsoft.VisualStudio.Web.CodeGeneration.Design
+dotnet add package Microsoft.EntityFrameworkCore.Design
+dotnet add package Microsoft.EntityFrameworkCore.SqlServer
+
+Page Microsoft.EntityFrameworkCore.Design và Microsoft.EntityFrameworkCore.SqlServer cần phải có để thực hiện thao tác scaffolding (phát sinh tự động code CRUD (create, read, update, delete) theo model.
+Nếu muốn kết nối đến MySQL thì thực hiện lệnh để thêm package tương ứng
+
+dotnet add package MySql.Data.EntityFramework
+Pomelo.EntityFrameworkCore.MySql
+MySql.EntityFrameworkCore
+
+
+-- thư viện faker::: 
+
+dotnet add package Bogus

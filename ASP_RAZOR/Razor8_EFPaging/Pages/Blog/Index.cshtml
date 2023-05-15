@@ -1,0 +1,63 @@
+@page
+@model Razor8_EFPaging.Pages_Blog.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+    int i=0;
+}
+
+<h1>Index</h1>
+<form method="get" asp-page="./Index">
+    <label>Tìm kiếm</label>
+    <input name="SearchString" value="">
+    <button type="submit">Tìm kiếm</button>
+</form>
+
+@{
+    var model1 = new Razor8_EFPaging.Helper.PagingModel{
+        currentPage = Model.currentPage,
+        countPages = Model.countPages,
+        SearchString = Model.SearchString,
+        generateUrl = (int? pagecurrent, string? Search)=>Url.Page("/Blog/Index",new{SearchString=Search, p = pagecurrent})
+    };
+}
+<partial name="__Paging" model="@model1"/>
+<p>
+    <a asp-page="Create" class="btn btn-primary">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                STT
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Article[0].Title)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Article[0].Created)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Article) {
+        <tr>
+            <td>
+                @(++i)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Title)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Created)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.Id">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.Id">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.Id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

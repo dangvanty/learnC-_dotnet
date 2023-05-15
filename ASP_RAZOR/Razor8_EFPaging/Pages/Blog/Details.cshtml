@@ -1,0 +1,17 @@
+@page "/blog/chi-tiet/{id:int}"
+@model Razor8_EFPaging.Pages_Blog.DetailsModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>@Model.Article.Title</h1>
+<p><i> @Model.Article.Created</i></p>
+<hr>
+@Html.Raw(Model.Article.Content)
+<hr>
+
+<div>
+    <a asp-page="./Edit" asp-route-id="@Model.Article?.Id">Edit</a> |
+    <a asp-page="./Index">Back to List</a>
+</div>
