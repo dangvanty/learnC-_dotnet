@@ -1,0 +1,45 @@
+@page
+@model ContactRequestModel
+@{
+  ViewData["Title"]="Liên hệ";
+}
+<h1 class="display-4"></h1>
+<p class="lead">Điền các thông tin liên hệ</p>
+<hr>
+<form class="bg-light" method="post" asp-page="ContactRequest">
+  <div class="mb-2 mt-3">
+  <label asp-for="contacUser.ID" class="form-label"></label>
+  <input asp-for="@Model.contacUser.ID" class="form-control" />
+  <span class="text-danger" asp-validation-for="contacUser.ID"></span>
+  </div>
+  <div class="mb-2 mt-3">
+  <label asp-for="contacUser.Name" class="form-label"></label>
+  <input asp-for="@Model.contacUser.Name" class="form-control" />
+  <span class="text-danger" asp-validation-for="contacUser.Name"></span>
+  </div>
+  <div class="mb-2 mt-3">
+  <label asp-for="contacUser.Age" class="form-label"></label>
+  <input asp-for="@Model.contacUser.Age" class="form-control" />
+  <span class="text-danger" asp-validation-for="contacUser.Age"></span>
+  </div>
+  <div class="mb-2 mt-3">
+  <label asp-for="contacUser.Email" class="form-label"></label>
+  <input asp-for="contacUser.Email" class="form-control" />
+  <span class="text-danger" asp-validation-for="contacUser.Email"></span>
+  </div>
+  <button class="btn btn-info" type="submit"> Gửi</button>
+</form>
+
+<div class="alert alert-danger">
+  <h3>Thông tin liên hệ:</h3>
+  <ul>
+    <li>ID : @Model.contacUser.ID </li>
+    <li>Name :  @Model.contacUser.Name </li>
+    <li>Age :  @Model.contacUser.Age </li>
+    <li>Email:  @Model.contacUser.Email </li>
+  </ul>
+</div>
+
+@section Scripts{
+  <partial name="_ValidationScriptsPartial"/>
+}
