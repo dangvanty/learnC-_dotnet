@@ -1,0 +1,46 @@
+@model Learn_MVC.Models.Product
+@{
+    Layout = "/Views/Shared/_Layout.cshtml";
+    var listProduct = ViewData["listProduct"] as List<Product>;
+    var productDetail = ViewData["product"] as Product;
+}
+@if(productDetail.ID!=90)
+{
+<div class="bg-warning">
+    <div class ="card-header">
+        @productDetail.Name
+    </div>
+    <div class="card-body">
+        <h5 class="card-title">
+             <p>Quantity--- @productDetail.Quantity</p>
+             <p>Description--- @productDetail.Description</p>
+        </h5>
+        <h5 class="card-title">
+                <a href="@this.Url.Action()">Ve danh sach</a>
+            </h5>
+        <h5 class="card-title">
+             <p>@this.Path</p>
+        </h5>
+    </div>
+</div>
+}
+else 
+{
+   foreach (var item in listProduct)
+   {
+    <div class="bg-warning">
+        <div class ="card-header">
+            @item.Name
+        </div>
+        <div class="card-body">
+            <h5 class="card-title">
+                <p>Quantity--- @item.Quantity</p>
+                <p>Description--- @item.Description</p>
+            </h5>
+            <h5 class="card-title">
+                <a href="@this.Url.Action()?id=@item.ID">@this.Url.Action()?id=@item.ID</a>
+            </h5>
+        </div>
+    </div>
+   } 
+}
