@@ -62,13 +62,25 @@
     Reverse the words of three or more lengths of the said string:
     ehT kciuq nworb xof spmuj revo eht yzal god
     */
-    string str = "The quick brown fox jumps over the lazy dog";
-    var strArr = str.Split(" ").Select(s=>s.Length>=3 ? new string (s.Reverse().ToArray()):new string(s.ToArray()));
-    string outt = String.Join(" ",strArr);
-    var test = String.Compare("zbc","bc");
-    Console.WriteLine(outt);
-    Console.WriteLine(test);
+    // string str = "The quick brown fox jumps over the lazy dog";
+    // var strArr = str.Split(" ").Select(s=>s.Length>=3 ? new string (s.Reverse().ToArray()):new string(s.ToArray()));
+    // string outt = String.Join(" ",strArr);
+    // var test = String.Compare("bbc","bc");
+    // Console.WriteLine(outt);
+    // Console.WriteLine("Ts::::: "+test);
    
 
 
 #endregion
+
+#region tuble
+
+// (string , string ) ok = ("80","ok");
+// var nice = ok;
+// (string c, string d) = nice;
+// int[] bn = new int[]{1,2,3};
+
+// Console.WriteLine("a là :::: "+ bn.ToString());
+
+#endregion
+
