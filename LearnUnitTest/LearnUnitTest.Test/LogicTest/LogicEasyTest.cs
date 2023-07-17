@@ -40,6 +40,7 @@ namespace LearnUnitTest.Test.LogicTest
 
             result.Should().Be("Hello : baby");
             result.Should().NotContain("ty");
+          
         }
         [Theory]
         [InlineData(1,1,2)]
