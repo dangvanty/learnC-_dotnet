@@ -6,6 +6,7 @@ class Test :IDisposable
   public Test(string name){
     this.Name = name;
     Console.WriteLine();
+    // not ne
   }
 
   public void Dispose()
