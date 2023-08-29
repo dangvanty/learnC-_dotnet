@@ -52,12 +52,14 @@ using httpClientTest;
 // PthTinhIndexTest.Test1();
 // PthTinhIndexTest.Test2();
 // PthTinhIndexTest.Test3();
-// Console.WriteLine("-----test try-catch-----");
+Console.WriteLine("-----test try-catch-----");
 
-// TryCatch.Test();
-// TryCatch.Test1();
-// Console.WriteLine("TEst::::::");
-// TryCatch.Test2();
+TryCatch.Test();
+TryCatch.Test1();
+Console.WriteLine("TEst::::::");
+TryCatch.Test2(1);
+TryCatch.TestUnboxingAndBoxing();
+
 
 // Console.WriteLine("---test file handle----");
 
@@ -101,7 +103,7 @@ using httpClientTest;
 
 //Console.WriteLine("---AsyncAwait---");
 // AsynAwait.Test();
-AsynAwait.Test2();
+// AsynAwait.Test2();
 // AsynAwait.Test3();
 // AsynAwait.TestDownloadWebpage();
 
@@ -134,3 +136,4 @@ AsynAwait.Test2();
 // httpListenerCreate.Test(); // fail
 
 // HttpClient1.TestPing();
+Console.ReadLine();
