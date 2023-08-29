@@ -17,21 +17,21 @@ namespace LearnUnitTest.Test.LogicTest
     {
         private readonly LogicEasy _logicEasy;
         private readonly IDNS _dNS;
-        public LogicEasyTest()
+        public LogicEasyTest() 
         {
             //dependencies
             _dNS = A.Fake<IDNS>();
 
             //SUT
             _logicEasy = new LogicEasy(_dNS);
-
+        
         }
         [Fact]
         public void LogicEasy_SayHi_ReturnString()
         {
             // Arrage, variables, classes, mocks
             //LogicEasy logicEasyTest = new LogicEasy();
-            A.CallTo(() => _dNS.SendDNS()).Returns(true);
+            A.CallTo(()=>_dNS.SendDNS()).Returns(true);
 
             // act
             var result = _logicEasy.SayHi();
@@ -40,11 +40,11 @@ namespace LearnUnitTest.Test.LogicTest
 
             result.Should().Be("Hello : baby");
             result.Should().NotContain("ty");
-
+          
         }
         [Theory]
-        [InlineData(1, 1, 2)]
-        [InlineData(1, 4, 5)]
+        [InlineData(1,1,2)]
+        [InlineData(1,4,5)]
         public void LogicEasy_SumTwoNum_ReturnInt(int a, int b, int expected)
         {
             // Arange:
@@ -52,7 +52,7 @@ namespace LearnUnitTest.Test.LogicTest
 
             // Act
 
-            var result = _logicEasy.SumTwoNum(a, b);
+            var result = _logicEasy.SumTwoNum(a,b);
             // Assert
             result.Should().Be(expected);
             result.Should().NotBe(0);
@@ -63,7 +63,7 @@ namespace LearnUnitTest.Test.LogicTest
         [Fact]
         public void LogicEasy_DateNow_ReturnDate()
         {
-
+            
             // act
             var result = _logicEasy.DateNow();
 
@@ -71,8 +71,8 @@ namespace LearnUnitTest.Test.LogicTest
 
             result.Should().BeAfter(1.February(2022));
             result.Should().BeBefore(10.December(2023));
-            result.Should().HaveDay(1);
-            result.Should().HaveMonth(8);
+            result.Should().HaveDay(14);
+            result.Should().HaveMonth(7);
             result.Should().NotHaveYear(2022);
             //result.Should().BeLessThan(45.Minutes()).Before(new DateTime(2015,07,14,10,00,30));
         }
@@ -111,9 +111,8 @@ namespace LearnUnitTest.Test.LogicTest
             // assert
             result.Should().BeOfType<PingOptions[]>();
             result.Should().ContainEquivalentOf(expected);
-            result.Should().Contain(x => x.DontFragment == true);
+            result.Should().Contain(x=>x.DontFragment==true);
         }
-      
 
     }
 }

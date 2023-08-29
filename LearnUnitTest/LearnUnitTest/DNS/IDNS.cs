@@ -10,5 +10,4 @@ namespace LearnUnitTest.DNS
     {
         bool SendDNS();
     }
-    
 }

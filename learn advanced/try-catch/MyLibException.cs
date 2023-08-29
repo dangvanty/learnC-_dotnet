@@ -14,7 +14,6 @@ namespace TestTryCatch
     {
       age = _age;
     }
-    //public override string HelpLink { get => "http://google.com" }
     public void Detail ()
     {
       Console.WriteLine($"Lỗi tuổi bạn nhập {age} không nằm trong khoảng [18,100]");
