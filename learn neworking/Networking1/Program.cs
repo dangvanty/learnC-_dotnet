@@ -13,13 +13,11 @@ class Program
   // }
   static void Main(string[] args)
   {
-  //  UriUriBuilder.ShowUriInfo("https://xuanthulab.net/abc/testpate.html?read=1#testfragment");
+   UriUriBuilder.ShowUriInfo("https://xuanthulab.net/abc/testpate.html?read=1#testfragment");
   //  UriUriBuilder.IPAddressExample("xuanthulab.net");
-  //  IPAddress ip = IPAddress.Parse("127.0.0.1");
-  //   int port = 1950;
-
-            
-  //  UriUriBuilder.StartConnectAsync(ip,port).Wait();
+   IPAddress ip = IPAddress.Parse("127.0.0.1");
+    int port = 1950;            
+   UriUriBuilder.StartConnectAsync(ip,port).Wait();
 
   }
 }

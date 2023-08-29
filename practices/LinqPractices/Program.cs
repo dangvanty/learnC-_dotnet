@@ -72,3 +72,4 @@ var strGroup = from w in strings2
                 } ;
 strGroup.ToList().ForEach(w=>Console.WriteLine($"firstletter : {w.FirstLetter} ; count : {w.Count}"));
 #endregion
+Console.ReadLine();

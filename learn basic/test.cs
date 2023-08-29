@@ -10,6 +10,7 @@ class Test :IDisposable
 
   public void Dispose()
   {
+    // not thing 
     throw new NotImplementedException();
   }
 }
